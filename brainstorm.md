@@ -5,3 +5,6 @@ Meerwaarde zit in
 
 Het is geen realtime, interactief ding, daarvoor is het te traag.
 
+sowieso support for jq - evt. met input file, "given this input, how do I ..."
+
+https://github.com/sashabaranov/go-openai
