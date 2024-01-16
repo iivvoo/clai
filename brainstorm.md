@@ -1,10 +1,10 @@
-In weze een simpele query interface naar chatgpt / openai API. Je zou (net als chatbots) de interface kunnen gebruiken voor unrelated queries, prompt injection, etc.
-Meerwaarde zit in
-- shell command, parsing
-- mogelijke integratie. Completion?
+- license
 
-Het is geen realtime, interactief ding, daarvoor is het te traag.
+- write readme
+ explain about improving skills and help
 
-sowieso support for jq - evt. met input file, "given this input, how do I ..."
+- print disclaimer, always, unless muted
 
-https://github.com/sashabaranov/go-openai
+- github ci builds
+
+
