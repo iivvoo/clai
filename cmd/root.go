@@ -13,16 +13,24 @@ var rootCmd = &cobra.Command{
 	Short: "Command Line AI",
 	Long:  `clai helps you write and learn more complex shell commands`,
 	Run: func(cmd *cobra.Command, args []string) {
-		clai.Config()
+		if !clai.Config() {
+			os.Exit(1)
+		}
 		c := clai.New(viper.GetString("apikey"))
 		c.Work(args[0])
 	},
 }
 
 var Verbose bool
+var Disclaimer bool
 
 func init() {
+	// Start with defaults and config
+	// allow flags to override
 	rootCmd.PersistentFlags().BoolVarP(&Verbose, "verbose", "v", false, "verbose output")
+	viper.BindPFlag("verbose", rootCmd.PersistentFlags().Lookup("verbose"))
+	rootCmd.PersistentFlags().BoolVarP(&Disclaimer, "disclaimer", "d", true, "show disclaimer")
+	viper.BindPFlag("disclaimer", rootCmd.PersistentFlags().Lookup("disclaimer"))
 	// add positional arguments
 	rootCmd.Args = cobra.MinimumNArgs(1)
 }

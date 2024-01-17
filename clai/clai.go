@@ -51,12 +51,22 @@ func (c *Clai) GetModel() string {
 }
 
 func (c *Clai) Work(query string) {
+	if c.Key == "" {
+		fmt.Println("API key not set")
+		return
+	}
+
+	if viper.GetBool("disclaimer") {
+		fmt.Println("Use caution: AI-generated scripts may contain errors. Do not use in production environments. Always back up files before running scripts.", viper.GetBool("disclaimer"))
+	}
+
+	if viper.GetBool("verbose") {
+		fmt.Printf("Query: %s\n", query)
+	}
 	client := openai.NewClient(c.Key)
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
-			// Model: openai.GPT3Dot5Turbo,
-			// Model: openai.GPT4,
 			Model: c.GetModel(),
 			Messages: []openai.ChatCompletionMessage{
 				{
@@ -77,5 +87,4 @@ func (c *Clai) Work(query string) {
 	}
 
 	fmt.Println(resp.Choices[0].Message.Content)
-
 }
