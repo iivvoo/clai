@@ -8,7 +8,7 @@ new shell commands and construct more complex commands. E.g.
 
     This command uses awk to read a tab-separated file, it creates an array 'sum' where the keys are the values in the first column and the values are the sum of the third column for each group. Finally, it prints the group and the sum.
 
-
+and
 
     $ "find the largest file"
     To find the largest file in a directory and its subdirectories, you can use the `find` and `du` commands together:
@@ -40,7 +40,7 @@ $ make
 
 Your binary will be in `bin/clai`
 
-Releases for several architectures including linux, macos and windows are available on the [releases](Releases) page.
+Releases for several architectures including linux, macos and windows are available on the [https://github.com/iivvoo/clai/releases](Releases) page.
 
 
 ## Prerequisites and configuration
