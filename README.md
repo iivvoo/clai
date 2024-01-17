@@ -52,6 +52,8 @@ Here you can also tweak the system prompt (make it more suitable to your needs o
 
 Alternatively you can just set the `OPENAI_APIKEY` or `CLAI_APIKEY` environment variable with your key and run on defaults.
 
+You can run `clai defaults` to see the known models and the default system prompt.
+
 
 ## License
 
