@@ -30,4 +30,4 @@ jobs:
         goversion: "https://dl.google.com/go/go1.21.6.linux-amd64.tar.gz"
         build_command: make build-release
         binary_name: clai-release
-        compress: Off
+        compress_assets: Off
