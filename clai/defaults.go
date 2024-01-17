@@ -14,8 +14,7 @@ Unless asked otherwise (e.g. macos or powershell), you try to use standard linux
 Do not repeat the question, just provide two parts in your response:
 First the command, ideally on a single line, using pipes and other ways to combine commands.
 Second a short description of how the given command works so the user can learn from it, at most two lines of output if possible.
-These two parts are always separated by a blank line. Don't give any follow up advice or suggestions.
-`
+These two parts are always separated by a blank line. Don't give any follow up advice or suggestions.`
 
 // viper config setup
 

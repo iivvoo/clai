@@ -19,28 +19,28 @@ func New(key string) *Clai {
 }
 
 // get model: map string from viper to openai model, warn and default if not found
+var Models = map[string]string{
+
+	"GPT432K0613":           openai.GPT432K0613,
+	"GPT432K0314":           openai.GPT432K0314,
+	"GPT432K":               openai.GPT432K,
+	"GPT40613":              openai.GPT40613,
+	"GPT40314":              openai.GPT40314,
+	"GPT4TurboPreview":      openai.GPT4TurboPreview,
+	"GPT4VisionPreview":     openai.GPT4VisionPreview,
+	"GPT4":                  openai.GPT4,
+	"GPT3Dot5Turbo1106":     openai.GPT3Dot5Turbo1106,
+	"GPT3Dot5Turbo0613":     openai.GPT3Dot5Turbo0613,
+	"GPT3Dot5Turbo0301":     openai.GPT3Dot5Turbo0301,
+	"GPT3Dot5Turbo16K":      openai.GPT3Dot5Turbo16K,
+	"GPT3Dot5Turbo16K0613":  openai.GPT3Dot5Turbo16K0613,
+	"GPT3Dot5Turbo":         openai.GPT3Dot5Turbo,
+	"GPT3Dot5TurboInstruct": openai.GPT3Dot5TurboInstruct,
+}
 
 func (c *Clai) GetModel() string {
-	m := map[string]string{
 
-		"GPT432K0613":           openai.GPT432K0613,
-		"GPT432K0314":           openai.GPT432K0314,
-		"GPT432K":               openai.GPT432K,
-		"GPT40613":              openai.GPT40613,
-		"GPT40314":              openai.GPT40314,
-		"GPT4TurboPreview":      openai.GPT4TurboPreview,
-		"GPT4VisionPreview":     openai.GPT4VisionPreview,
-		"GPT4":                  openai.GPT4,
-		"GPT3Dot5Turbo1106":     openai.GPT3Dot5Turbo1106,
-		"GPT3Dot5Turbo0613":     openai.GPT3Dot5Turbo0613,
-		"GPT3Dot5Turbo0301":     openai.GPT3Dot5Turbo0301,
-		"GPT3Dot5Turbo16K":      openai.GPT3Dot5Turbo16K,
-		"GPT3Dot5Turbo16K0613":  openai.GPT3Dot5Turbo16K0613,
-		"GPT3Dot5Turbo":         openai.GPT3Dot5Turbo,
-		"GPT3Dot5TurboInstruct": openai.GPT3Dot5TurboInstruct,
-	}
-
-	if model, found := m[viper.GetString("model")]; found {
+	if model, found := Models[viper.GetString("model")]; found {
 		return model
 	}
 
