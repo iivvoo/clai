@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        goos: [linux, darwin]
+        goos: [linux, darwin, windows]
         goarch: ["386", amd64, arm64]
         exclude:  
           - goarch: "386"
@@ -28,6 +28,6 @@ jobs:
         goos: ${{ matrix.goos }}
         goarch: ${{ matrix.goarch }}
         goversion: "https://dl.google.com/go/go1.21.6.linux-amd64.tar.gz"
-        build_command: make build-release
+        # build_command: make build-release
         binary_name: clai-release
         compress_assets: Off
