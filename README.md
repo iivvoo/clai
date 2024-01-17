@@ -35,12 +35,30 @@ Get-ChildItem -File | Sort-Object -Property Length -Descending | Select-Object -
 This command uses the `Get-ChildItem` cmdlet to list all files in the current directory, piped to `Sort-Object` to sort them by file size in descending order, and then piped to `Select-Object` to select just the first (largest) file.
 ```
 
+## Install
+
+```
+$ git clone https://github.com/iivvoo/clai.git
+$ make
+```
+
+Your binary will be in `bin/clai`
+
+Soon releases for different architectures will be built
+
 ## Prerequisites and configuration
+
+You will need an OpenAI api key. Open https://platform.openai.com/account/api-keys to create a key, create an
+account if necessary. New users get some free credit but at some point you will need to pay for API access.
+The (default) GPT3Dot5Turbo model should work really well and is very price efficient.
 
 Configuration is done through a config.yml file that can be placed in $HOME/.clai/ or $HOME/.config/clai/
 
-You will need an OpenAI api key. Instructions on how to get one are <here>
-
 Here you can also tweak the system prompt (make it more suitable to your needs or environment) and disable the disclaimer once you  get fed up with it and are aware that you should always double check anything generated or suggested by an AI
 
+Alternatively you can just set the `OPENAI_APIKEY` or `CLAI_APIKEY` environment variable with your key and run on defaults.
 
+
+## License
+
+clai is open source and available under the MIT License. See LICENSE.txt
