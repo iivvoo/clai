@@ -40,7 +40,7 @@ $ make
 
 Your binary will be in `bin/clai`
 
-Releases for several architectures including linux, macos and windows are available on the [https://github.com/iivvoo/clai/releases](Releases) page.
+Releases for several architectures including linux, macos and windows are available on the [Release](https://github.com/iivvoo/clai/releases) page.
 
 
 ## Prerequisites and configuration
