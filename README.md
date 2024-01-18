@@ -10,7 +10,7 @@ new shell commands and construct more complex commands. E.g.
 
 and
 
-    $ "find the largest file"
+    $ clai "find the largest file"
     To find the largest file in a directory and its subdirectories, you can use the `find` and `du` commands together:
 
     ```bash
